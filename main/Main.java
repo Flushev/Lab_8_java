@@ -1,36 +1,44 @@
 import shop.store;
 import para.shoes;
+import taxx.taxa;
 import java.util.*;
 public class Main {
 	public static void main (String[] args)
 	{	final int LEN=100;
 		
 		 Scanner in = new Scanner(System.in);
-		 shoes para1 = new shoes("__Название__","__Вид__","__Артикул__",0);
+		 shoes para1 = new shoes("__Р‘СЂРµРЅРґ__","__Р’РёРґ__","__РђСЂС‚РёРєСѓР»__",0);
 		 para1.read();
 		 double sum=0;
 		 sum=para1.add(sum);
 		 store st1 = new store(1,0,0,para1);
 		 st1.display();
+		 taxa t = new taxa();
+		 st1.nalog(t);
+		 double t1 = t.tmp;
+		 System.out.println ("РќР°Р»РѕРі РЅР° РїР°СЂС‹ РѕР±СѓРІРё: " + t1);
 		 st1.sale();
 		 st1.display();
 		 st1.back();
 		 st1.display();
-		 System.out.println("Введите количество позиций");
+		 System.out.println("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕР·РёС†РёР№");
 		 int col=in.nextInt();
 		shoes[] para2 = new shoes[LEN];
 		for(int i=0; i<col; i++)
 		{
-			para2[i] = new shoes("__Название__","__Вид__","__Артикул__",0);
+			para2[i] = new shoes("__Р‘СЂРµРЅРґ__","__Р’РёРґ__","__РђСЂС‚РёРєСѓР»__",0);
 			para2[i].read();
 			sum=para2[i].add(sum);
 		}
 		store st2 = new store(col,0,0,para2);
-		 st1.display();
-		 st1.sale();
-		 st1.display();
-		 st1.back();
-		 st1.display();
+		 st2.display();
+		 st2.nalog(t);
+		 t1 = t.tmp;
+		 System.out.println ("РќР°Р»РѕРі РЅР° РїР°СЂС‹ РѕР±СѓРІРё: " + t1);
+		 st2.sale();
+		 st2.display();
+		 st2.back();
+		 st2.display();
 	}
 
 

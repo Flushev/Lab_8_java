@@ -8,10 +8,9 @@ public class shoes {
 		private double price;
 		public shoes () 
 		{
-
-			this.name="__Название__";
-			this.type="__Вид__";
-			this.art="__Артикул__";
+			this.name="__Р‘СЂРµРЅРґ__";
+			this.type="__Р’РёРґ__";
+			this.art="__РђСЂС‚РёРєСѓР»__";
 			this.price=0;
 		}
 		public shoes(String name, String type, String art, double price)
@@ -21,33 +20,35 @@ public class shoes {
 			this.art=art;
 			this.price=price;
 		}
-				public double get_price()
+		public double get_price()
 		{
 			return this.price;
 		}
 		public void read()
 		{	Scanner in = new Scanner(System.in);
-			shoes para = new shoes("__Название__","__Вид__","__Артикул__",0);
-			System.out.println("Введите Бренд:");
+			shoes para = new shoes("__Р‘СЂРµРЅРґ__","__Р’РёРґ__","__РђСЂС‚РёРєСѓР»__",0);
+			System.out.println("Р’РІРµРґРёС‚Рµ Р‘СЂРµРЅРґ:");
 			name=in.nextLine();
-			System.out.println("Введите Вид:");
+			System.out.println("Р’РІРµРґРёС‚Рµ Р’РёРґ:");
 			type=in.nextLine();
-			System.out.println("Введите Артикул:");
+			System.out.println("Р’РІРµРґРёС‚Рµ РђСЂС‚РёРєСѓР»:");
 			art=in.nextLine();
-			System.out.println("Введите Стоимость:");
+			System.out.println("Р’РІРµРґРёС‚Рµ РЎС‚РѕРёРјРѕСЃС‚СЊ:");
 			price=in.nextDouble();
 		}
 		public void display()
 		{
-			System.out.println("Бренд: "+ name);
-			System.out.println("Вид обуви: "+ type);
-			System.out.println("Артикул: "+ art);
-			System.out.println("Стоимость: "+ price);		
+			System.out.println("Р‘СЂРµРЅРґ: "+ name);
+			System.out.println("Р’РёРґ РѕР±СѓРІРё: "+ type);
+			System.out.println("РђСЂС‚РёРєСѓР»: "+ art);
+			System.out.println("РЎС‚РѕРёРјРѕСЃС‚СЊ: "+ price);		
 		}
 		public double add(double sum)
 		{
 			sum+=price;
-			System.out.println("Общая стоимость: " + sum);
+			System.out.println("РћР±С‰Р°СЏ СЃС‚РѕРёРјРѕСЃС‚СЊ: " + sum);
 			return sum;
 		}
 	}
+
+

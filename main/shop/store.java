@@ -1,5 +1,6 @@
 package shop;
 import para.*;
+import taxx.*;
 import java.util.*;
 public class store {
 	private static final int LEN = 100;
@@ -36,9 +37,9 @@ public class store {
 	}
 	public void display()
 	{
-		System.out.println("Количество товаров : " +col);
-		System.out.println("Выручка : " + profit);
-		System.out.println("Количество продаж : " + sale_count);
+		System.out.println("РљРѕР»РёС‡РµСЃС‚РІРѕ С‚РѕРІР°СЂРѕРІ : " +col);
+		System.out.println("Р’С‹СЂСѓС‡РєР° : " + profit);
+		System.out.println("РљРѕР»РёС‡РµСЃС‚РІРѕ РїСЂРѕРґР°Р¶ : " + sale_count);
 		for(int i=0; i<col; i++)
 		{
 			para[i].display();	
@@ -55,7 +56,7 @@ public class store {
 			this.sale_count += 1;
 			this.col -= 1;
 		}
-		System.out.println("Продажа прошла успешно!");
+		System.out.println("РџСЂРѕРґР°Р¶Р° РїСЂРѕС€Р»Р° СѓСЃРїРµС€РЅРѕ!");
 	}
 
 	public void back ()
@@ -66,7 +67,12 @@ public class store {
 			this.sale_count -= 1;
 			this.col += 1;
 		}
-		System.out.println("Возврат прошел успешно!");
+		System.out.println("Р’РѕР·РІСЂР°С‚ РїСЂРѕС€РµР» СѓСЃРїРµС€РЅРѕ!");
 
+	}
+
+	public void nalog (taxa s)
+	{
+		s.tmp = (int)1000*this.col;		
 	}
 }
