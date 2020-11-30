@@ -1,2 +1,2 @@
-chcp 1251
+chcp 65001
 cmd

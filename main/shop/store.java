@@ -8,6 +8,11 @@ public class store {
 	private double profit;
 	private int sale_count;
 	private shoes[] para = new shoes[LEN];
+	private static int stavka;
+	static 
+	{
+		stavka = 300;
+	}
 		
 	public store(int col, double profit, int sale_count, shoes[] para)
 	{
@@ -71,8 +76,8 @@ public class store {
 
 	}
 
-	public void nalog (taxa s)
+	public static void nalog ()
 	{
-		s.tmp = (int)1000*this.col;		
+		taxa.tmp += stavka;		
 	}
 }
