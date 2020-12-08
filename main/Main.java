@@ -7,7 +7,15 @@ public class Main {
 	{	final int LEN=100;
 		
 		 Scanner in = new Scanner(System.in);
-		 shoes para1 = new shoes("__Р‘СЂРµРЅРґ__","__Р’РёРґ__","__РђСЂС‚РёРєСѓР»__",0);
+
+		 System.out.println ("Инициализация массива через конструктор с 1 параметром: ");
+		 shoes s[] = new shoes [2];
+		 for (int i = 0; i < 2; i ++)
+		 {
+			s[i] = new shoes (i);
+			s[i].display();
+		 }
+		 shoes para1 = new shoes("__Бренд__","__Вид__","__Артикул__",0);
 		 para1.read();
 		 double sum=0;
 		 sum=para1.add(sum);
@@ -15,25 +23,25 @@ public class Main {
 		 st1.display();
 		 taxa t = new taxa();
 		 store.nalog ();
-		 System.out.println ("РќР°Р»РѕРі РЅР° РїР°СЂС‹ РѕР±СѓРІРё: " + taxa.tmp);
+		 System.out.println ("Налог на пары обуви: " + taxa.tmp);
 		 st1.sale();
 		 st1.display();
 		 st1.back();
 		 st1.display();
-		 System.out.println("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕР·РёС†РёР№");
+		 System.out.println("Введите количество позиций");
 		 int col=in.nextInt();
 		taxa.tmp = 0;
 		shoes[] para2 = new shoes[LEN];
 		for(int i=0; i<col; i++)
 		{
-			para2[i] = new shoes("__Р‘СЂРµРЅРґ__","__Р’РёРґ__","__РђСЂС‚РёРєСѓР»__",0);
+			para2[i] = new shoes("__Бренд__","__Вид__","__Артикул__",0);
 			para2[i].read();
 			sum=para2[i].add(sum);
 			store.nalog();
 		}
 		store st2 = new store(col,0,0,para2);
 		 st2.display();
-		 System.out.println ("РќР°Р»РѕРі РЅР° РїР°СЂС‹ РѕР±СѓРІРё: " + taxa.tmp);
+		 System.out.println ("Налог на пары обуви: " + taxa.tmp);
 		 st2.sale();
 		 st2.display();
 		 st2.back();

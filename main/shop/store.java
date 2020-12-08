@@ -42,9 +42,9 @@ public class store {
 	}
 	public void display()
 	{
-		System.out.println("РљРѕР»РёС‡РµСЃС‚РІРѕ С‚РѕРІР°СЂРѕРІ : " +col);
-		System.out.println("Р’С‹СЂСѓС‡РєР° : " + profit);
-		System.out.println("РљРѕР»РёС‡РµСЃС‚РІРѕ РїСЂРѕРґР°Р¶ : " + sale_count);
+		System.out.println("Количество товаров : " +col);
+		System.out.println("Выручка : " + profit);
+		System.out.println("Количество продаж : " + sale_count);
 		for(int i=0; i<col; i++)
 		{
 			para[i].display();	
@@ -61,7 +61,7 @@ public class store {
 			this.sale_count += 1;
 			this.col -= 1;
 		}
-		System.out.println("РџСЂРѕРґР°Р¶Р° РїСЂРѕС€Р»Р° СѓСЃРїРµС€РЅРѕ!");
+		System.out.println("Продажа прошла успешно!");
 	}
 
 	public void back ()
@@ -72,7 +72,7 @@ public class store {
 			this.sale_count -= 1;
 			this.col += 1;
 		}
-		System.out.println("Р’РѕР·РІСЂР°С‚ РїСЂРѕС€РµР» СѓСЃРїРµС€РЅРѕ!");
+		System.out.println("Возврат прошел успешно!");
 
 	}
 
