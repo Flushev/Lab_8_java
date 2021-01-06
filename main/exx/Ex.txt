@@ -1,0 +1,14 @@
+package exx;
+import java.util.*;
+class Ex extends Exception 
+{
+  private int Type;       
+  Ex(int a)                   
+   {
+    	Type = a;
+   }
+   public String toString() 
+   {
+	if (Type == 1)
+		return "Стоимость не может Быть отрицательной!";
+   }

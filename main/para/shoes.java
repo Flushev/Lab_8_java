@@ -1,5 +1,8 @@
 package para;
+import exx.Ex;
 import java.util.*;
+
+
 public class shoes {
 
 		private String name;
@@ -31,8 +34,10 @@ public class shoes {
 		{
 			return this.price;
 		}
-		public void read()
-		{	Scanner in = new Scanner(System.in);
+		public void read() 
+		{	int f = 0;
+			double temp;
+			Scanner in = new Scanner(System.in);
 			shoes para = new shoes("__Бренд__","__Вид__","__Артикул__",0);
 			System.out.println("Введите Бренд:");
 			name=in.nextLine();
@@ -40,8 +45,31 @@ public class shoes {
 			type=in.nextLine();
 			System.out.println("Введите Артикул:");
 			art=in.nextLine();
-			System.out.println("Введите Стоимость:");
-			price=in.nextDouble();
+			while (f == 0)
+			{	
+				System.out.println("Введите Стоимость:");
+				temp=in.nextDouble();
+				try
+				{
+					if (temp > 0)
+					{
+						price = temp;
+						f = 1;
+					}
+					else 
+					{
+						f = 0;
+						throw new Ex (1);
+						
+					}
+				}
+				catch (Ex e)
+				{
+					System.out.println ("Ошибка ввода!" + e);
+					
+				}				
+
+			}
 		}
 		public void display()
 		{
