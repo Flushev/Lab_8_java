@@ -9,11 +9,23 @@ public class store {
 	private int sale_count;
 	private shoes[] para = new shoes[LEN];
 	private static int stavka;
+	private shoes [][] para_1 = new shoes [LEN][LEN];
+	private int box = 0;
+	private int k_box = 0;
 	static 
 	{
 		stavka = 300;
 	}
-		
+	 public store(int box, int k_box, shoes[][] para)
+        {
+            this.col = box * k_box;
+            this.box = box;
+            this.k_box = k_box;
+            for (int i = 0; i < box; i++) // Количество коробок
+                for (int j = 0; j < k_box; j++) // Количество пар в коробке
+                    this.para_1[i][j] = para[i][j];
+	}
+	
 	public store(int col, double profit, int sale_count, shoes[] para)
 	{
 		this.col=col;
@@ -36,6 +48,28 @@ public class store {
 	
 		
 	}
+      	public double cost_sklad ()
+        {
+            double cost = 0;
+            for (int i = 0; i < box; i++)
+                for (int j = 0; j < k_box; j++)
+                    cost += para_1[i][j].get_price();
+            return cost;
+        }
+       	public void display_sklad()
+        {
+            System.out.println("Количество коробок на складе " + box);
+            System.out.println ("Количество пар в коробке " + k_box);
+            System.out.println("Общее количество пар на складе " + col);
+            System.out.println("Общая стоимость товаров на складе " + cost_sklad());
+            for (int i = 0; i < box; i++)
+            {
+                for (int j = 0; j < k_box; j++)
+                    para_1[i][j].display();
+                System.out.println("\n");
+            }
+
+        }
 	public int get_col () 
 	{
 		return this.col;

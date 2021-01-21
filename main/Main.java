@@ -8,7 +8,21 @@ public class Main {
 	{	final int LEN=100;
 		
 		 Scanner in = new Scanner(System.in);
-
+		 shoes[][] p = new shoes[10][10];
+           	 int box = 0;
+            	int k_box = 0;
+            	System.out.println("¬ведите количество коробок на складе");
+            	box = in.nextInt();
+            	System.out.println("¬ведите количество пар в коробке");
+            	k_box = in.nextInt();
+            	for (int i = 0; i < box; i++)
+                	for (int j = 0; j < k_box; j++)
+                	{
+                    		p[i][j] = new shoes();
+                    		p[i][j].read();
+                	}
+       		store sklad = new store (box, k_box, p);
+            	sklad.display_sklad();
 		 System.out.println ("»нициализаци€ массива через конструктор с 1 параметром: ");
 		 shoes s[] = new shoes [2];
 		 for (int i = 0; i < 2; i ++)
